@@ -15,9 +15,9 @@ Access to the `levante-data-pilots-hackathon` dataset for this tutorial requires
 devtools::install_github("levante-framework/levante-r")
 
 # load levante and other supporting packages
-library(levante)
-library(dplyr)
-library(ggplot2)
+install.packages("pacman")
+library(pacman)
+p_load(levante, dplyr, ggplot2)
 
 # set a theme
 theme_set(theme_classic())
