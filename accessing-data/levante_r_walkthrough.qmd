@@ -5,9 +5,10 @@ format:
 date: "2026-07-01"
 ---
 
-See the [levante R package README](https://levante-framework.github.io/levante-r/index.html). This tutorial is adapted from the walkthrough available at this link.
+The levante R package documentation is available here: https://levante-framework.github.io/levante-r/index.html
+This tutorial is adapted from a walkthrough available at the link above.
 
-Access to the `levante-data-pilots-hackathon` dataset for this tutorial requires creating a Redivis (data-sharing platform) account, joining the LEVANTE organization, and completing a Data Use Agreement. For more information, see our [Researcher Site page on Data Access](https://researcher.levante-network.org/data).
+Access to the `levante-data-pilots-hackathon` dataset in this tutorial requires creating a Redivis (data-sharing platform) account, joining the LEVANTE organization, and completing a Data Use Agreement. For more information, see https://researcher.levante-network.org/data. 
 
 ## Setup 
 ```{r}
@@ -59,7 +60,7 @@ ggplot(scores, aes(x = age, y = score)) +
   geom_point()
 ```
 
-Use `get_trials()` to access trial-level data.
+Use `get_trials()` to access trial-level data. Note that this is large and may take longer to load.
 ```{r}
 
 # Pull trial-level data from Redivis and save it to a data frame called "trials"
