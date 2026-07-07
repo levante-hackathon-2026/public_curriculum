@@ -1,6 +1,8 @@
 ---
 title: "Multigroup IRT in LEVANTE tutorial"
 author: "Mika Braginsky"
+editor_options: 
+  chunk_output_type: console
 ---
 
 This tutorial shows you the basics of how to fit and use Item Response Theory models using the `mirt` R package.
