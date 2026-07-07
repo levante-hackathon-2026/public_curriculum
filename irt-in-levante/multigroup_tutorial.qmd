@@ -1,6 +1,18 @@
+---
+title: "Multigroup IRT in LEVANTE tutorial"
+author: "Mika Braginsky"
+---
+
+This tutorial shows you the basics of how to fit and use Item Response Theory models using the `mirt` R package.
+We'll use a simplified version the trial-level data from the LEVANTE mental rotation task taken from the `levante-data-pilots-hackathon` dataset -- subset to one response per participant per trial to avoid complication in the data preparation and model set up.
+
+Places marked `TODO` are where you're expected to fill in code.
+
 ```{r}
 library(mirt)
+library(tidyverse)
 ```
+
 
 # Step 1: Load in data and prep it for modeling
 
@@ -28,6 +40,7 @@ trials_wide <- trials |>
 trials_prepped <- trials_wide |> select(-dataset)
 run_groups <- trials_wide |> pull(dataset)
 ```
+
 
 # Step 2: Fit models
 
@@ -134,19 +147,28 @@ hist(scores$ability, breaks = 20) # distribution of scores
 hist(scores$se, breaks = 20)      # distribution of SEs
 ```
 
+
 # Exercise
 
 Which type of model would have more estimated parameters, a Rasch model with configural invariance or a Rasch model with scalar invariance? How about a Rasch model with scalar invariance or a 2PL model with scalar invariance? Make a guess based on your understanding, and then check it using `extract.mirt()`.
 
+```{r}
+extract.mirt() # TODO
+```
+
+
 # Resources
 
-Actual model fitting code is in:
-https://github.com/levante-framework/levantemodels
+See also documentation for `mirt`:
+https://philchalmers.github.io/mirt
+
+LEVANTE model fitting code is in the `levantemodels` R package:
+https://levante-framework.github.io/levantemodels
 
 Fitted models and scoring specifications are saved in the levante-metadata-scoring dataset:
 https://stanford.redivis.com/datasets/e97h-009zz0c49
 
-Note complications in our real data/models:
+Note some complications in our real data/models:
 - participants can see given item multiple times (actually same item or collapsed item types)
 - set of presented items can be different across sites
 - items can have all correct/incorrect responses

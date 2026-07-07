@@ -17,4 +17,4 @@ trials_mrot_subset <- trials_mrot |>
   select(dataset, run_id, item_uid, correct) |>
   mutate(run_id = consecutive_id(run_id))
 
-write_rds(trials_mrot_subset, "data/trials_mrot.rds")
+write_rds(trials_mrot_subset, "data/trials_mrot.rds", compress = "gz")
